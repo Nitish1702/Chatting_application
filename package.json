@@ -4,9 +4,12 @@
   },
   
     "scripts": {
-        "server": "node index.js",
+        "server": "node index.js --prefix server",
         "client": "npm start --prefix public",
-        "start": "concurrently \"npm run --prefix server\" \"npm run client\""
+        "start": "concurrently \"npm run server\" \"npm run client\"",
+        "server-build":"npm install --prefix server",
+        "public-build":"npm install --prefix public",
+        "build":"concurrently \"npm run server-build\" \"npm run public-build\""
     }
 
 }
