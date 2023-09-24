@@ -102,16 +102,16 @@ const ChatContainer = ({ currChat, currUser, socket }) => {
 const Container = styled.div`
   color:white;
   
-  padding-top:1rem ;
   display: flex;
   flex-direction:column;
   justify-content: space-between;
   grid-template-columns: 15% 70% 15%;
-  gap:1rem;
+
   .chat-header{
-    
+
+    background-color: #26135c;
     display: flex;
-    padding: 0 2rem;
+    padding: 0.7rem 2rem;
     justify-content: space-between;
     align-items: center;
     .user-details{
@@ -140,7 +140,7 @@ const Container = styled.div`
     &::-webkit-scrollbar {
       width: 0.2rem;
       &-thumb {
-        background-color: #ffffff39;
+        background-color: #fffffff8;
         width: 0.1rem;
         border-radius: 1rem;
       }

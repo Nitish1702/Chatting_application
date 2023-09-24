@@ -78,7 +78,7 @@ const Container = styled.div`
     
     border-radius: 2rem;
     height: 85vh;
-    width: 85vw;
+    width: 95vw;
     background-color: #00000076;
     display: grid;
     grid-template-columns: 25% 75%; /* Corrected property name */

@@ -25,10 +25,10 @@ const Button = styled.button`
     border-radius: 0.5rem;
     border: none;
     position: relative;
-    left: 40%;
+    left: 45%;
     cursor: pointer;
     div{
-        font-size: 1.3rem;
+        font-size: 1rem;
         color: #ebe7ff;
     }
 `

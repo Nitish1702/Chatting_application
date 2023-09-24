@@ -97,7 +97,7 @@ const ChatInput = ({handleMsgSend}) => {
     }
   }
   .input-container {
-
+      padding: 0.7rem;
       form{
 
           width: 100%;
