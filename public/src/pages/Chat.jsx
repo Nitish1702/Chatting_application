@@ -32,7 +32,7 @@ const Chat = () => {
   }, [])
   useEffect(() => {
     if (currUser) {
-      socket.current = io('https://chattingapplication.onrender.com/')
+      socket.current = io(host)
       socket.current.emit('add-user', currUser._id)
     }
   }, [currUser])
