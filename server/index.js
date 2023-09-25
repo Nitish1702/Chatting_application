@@ -27,7 +27,7 @@ const server = app.listen(port, () => {});
 
 const io = socket(server, {
   cors: {
-    origin: "https://chattingapplication.onrender.com/",
+    origin: "*",
     
   },
 });
