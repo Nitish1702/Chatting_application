@@ -4,8 +4,8 @@ import Logout from './Logout'
 import ChatInput from './ChatInput'
 import Messages from './Messages'
 import axios, { all } from 'axios'
-import { getAllMessagesRoute,host, sendMessageRoute } from '../utils/ApiRoutes'
-export const recieveMessageRoute = `${host}/api/messages/getmsg`;
+import { getAllMessagesRoute, sendMessageRoute } from '../utils/ApiRoutes'
+export const recieveMessageRoute = `/api/messages/getmsg`;
 
 const ChatContainer = ({ currChat, currUser, socket }) => {
   const [allMsgs, setAllMsgs] = useState([])

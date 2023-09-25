@@ -1,7 +1,7 @@
 export const host = 'http://localhost:3001'
-export const registerRoute=`${host}/api/auth/register`
-export const loginRoute=`${host}/api/auth/login`
-export const setAvatarRoute=`${host}/api/auth/setAvatar`
-export const allUsersRoute=`${host}/api/auth/allUsers`
-export const sendMessageRoute=`${host}/api/msg/addMessage`
-export const getAllMessagesRoute=`${host}/api/msg/getAllMessages`
+export const registerRoute=`/api/auth/register`
+export const loginRoute=`/api/auth/login`
+export const setAvatarRoute=`/api/auth/setAvatar`
+export const allUsersRoute=`/api/auth/allUsers`
+export const sendMessageRoute=`/api/msg/addMessage`
+export const getAllMessagesRoute=`/api/msg/getAllMessages`

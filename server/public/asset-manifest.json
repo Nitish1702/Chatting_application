@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.6631004a.css",
-    "main.js": "/static/js/main.da95b7a2.js",
+    "main.js": "/static/js/main.b8b5d00a.js",
     "static/media/robot.gif": "/static/media/robot.0617a41936621e9697cd.gif",
     "static/media/loader.gif": "/static/media/loader.b40fc3d91ff1f4db53e2.gif",
     "static/media/NiChat-logos_transparent.png": "/static/media/NiChat-logos_transparent.43728c1d9b976e98e97f.png",
     "index.html": "/index.html",
     "main.6631004a.css.map": "/static/css/main.6631004a.css.map",
-    "main.da95b7a2.js.map": "/static/js/main.da95b7a2.js.map"
+    "main.b8b5d00a.js.map": "/static/js/main.b8b5d00a.js.map"
   },
   "entrypoints": [
     "static/css/main.6631004a.css",
-    "static/js/main.da95b7a2.js"
+    "static/js/main.b8b5d00a.js"
   ]
 }
