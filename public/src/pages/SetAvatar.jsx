@@ -46,7 +46,7 @@ const SetAvatar = () => {
                 user.isAwatarImageSet = true;
                 user.avatarImage = data.image;
                 localStorage.setItem('currentUser', JSON.stringify(user))
-                console.log('hello');
+
                 navigate('/')
             } else {
                 toast.error("Error setting Avatar. Try again", toastOptions);

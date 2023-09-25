@@ -27,7 +27,7 @@ module.exports.login = async (req, res, next) => {
   try {
     const { password, email } = req.body;
     const emailCheck = await User.findOne({ email });
-    // console.log(emailCheck);
+
     if (emailCheck)
       if (bcrypt.compare(emailCheck.password, password)) {
         return res.json({
@@ -59,7 +59,7 @@ module.exports.setAvatar = async (req, res, next) => {
       image: userData.avatarImage,
     });
 
-    // console.log(emailCheck);
+
   } catch (er) {
     next(er);
   }

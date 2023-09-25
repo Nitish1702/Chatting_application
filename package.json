@@ -1,15 +1,13 @@
 {
   "dependencies": {
-    "react-toastify": "^9.1.3"
+    "concurrently": "^8.2.1"
   },
-  
-    "scripts": {
-        "server": "npm start --prefix server",
-        "client": "npm start --prefix public",
-        "start": "concurrently \"npm run server\" \"npm run client\"",
-        "server-build":"npm install --prefix server",
-        "public-build":"npm install --prefix public",
-        "build":"concurrently \"npm run server-build\" \"npm run public-build\""
-    }
-
+  "scripts": {
+    "server": "npm start --prefix server",
+    "client": "npm start --prefix public",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server-build": "npm install --prefix server",
+    "public-build": "npm install --prefix public",
+    "build": "npm install && concurrently \"npm run server-build\" \"npm run public-build\""
+  }
 }

@@ -17,12 +17,11 @@ const ChatContainer = ({ currChat, currUser, socket }) => {
 
   useEffect(() => {
     if (currChat) {
-      console.log('hehe')
+
       axios.post(getAllMessagesRoute, {
         from: currUser._id,
         to: currChat._id
       }).then((res) => {
-        console.log(res)
         setAllMsgs(res.data)
       })
     }
@@ -33,7 +32,7 @@ const ChatContainer = ({ currChat, currUser, socket }) => {
   
   const handleMsgSend = async (e, message) => {
     e.preventDefault()
-    console.log(message)
+
     if (socket.current) {
       socket.current.emit('send-msg', {
         to: currChat._id,
@@ -57,7 +56,7 @@ const ChatContainer = ({ currChat, currUser, socket }) => {
     socket.current.on('recv-msg', (msg) => {
       setarrivalMessage({ fromSelf: false, content: msg })
     })
-    console.log(arrivalMessage)
+
   }, [allMsgs])
   useEffect(() => {
     scroll.current?.scrollIntoView({ behaviour: 'smooth' })

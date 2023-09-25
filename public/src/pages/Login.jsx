@@ -32,7 +32,7 @@ const Login = () => {
         }
         else {
           localStorage.setItem('currentUser', JSON.stringify(data.user))
-          console.log(data.user);
+
           navigate('/')
           
         }
@@ -72,7 +72,7 @@ const handleValidation = () => {
     
 }
 const handleChange = (e) => {
-  console.log(e.target.name);
+
   setvalues({ ...values, [e.target.name]: e.target.value });
   
 }

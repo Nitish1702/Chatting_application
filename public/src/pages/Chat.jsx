@@ -17,13 +17,13 @@ const Chat = () => {
   const [currUser, setcurrUser] = useState(undefined)
   const [currChat, setCurrChat] = useState(undefined)
   useEffect(() => {
-    console.log('hello');
+
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     if (currentUser && currentUser.isAwatarImageSet === false) {
       navigate('/setAvatar')
     }
     else if (!(localStorage.getItem('currentUser'))) {
-      console.log(localStorage.getItem('currentUser'));
+
       navigate('/login')
     } else {
       const user = JSON.parse(localStorage.getItem('currentUser'))
@@ -40,7 +40,7 @@ const Chat = () => {
     if (currUser) {
       axios.get(`${allUsersRoute}/${currUser._id}`).then(
         (users) => {
-          console.log(users);
+
           setContacts(users.data)
         }
         )

@@ -16,12 +16,12 @@ mongoose.connect(process.env.DB, {
     useNewUrlParser: true,
     useUnifiedTopology:true
 }).then(() => {
-    console.log('db connection success');
+    
 }).catch((err) => {
-    console.log(err);
+    next(err)
 })
 const port = process.env.PORT || 3001;
-const server=app.listen(port, ()=>{console.log(`listening to the port ${port}...`)})
+const server=app.listen(port, ()=>{})
 
 const io =socket(server,{
     cors: {

@@ -7,10 +7,10 @@ module.exports = async () => {
     }
     try {
         await mongoose.connect(process.env.DB, mongoose.connectionParams);
-        console.log('connected to db success')
+
 
     }
     catch (err) {
-        console.log(err)
+
     }
 }
