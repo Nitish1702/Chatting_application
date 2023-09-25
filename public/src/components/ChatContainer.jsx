@@ -26,13 +26,10 @@ const ChatContainer = ({ currChat, currUser, socket }) => {
       })
     }
   }, [currChat])
-  useEffect(() => {
-    arrivalMessage && setAllMsgs((prev) => [...prev, arrivalMessage]);
-  }, [arrivalMessage]);
   
   const handleMsgSend = async (e, message) => {
     e.preventDefault()
-
+    
     if (socket.current) {
       socket.current.emit('send-msg', {
         to: currChat._id,
@@ -48,16 +45,19 @@ const ChatContainer = ({ currChat, currUser, socket }) => {
     const updatedMsgs = [...allMsgs]
     updatedMsgs.push({ fromSelf: true, content: message })
     setAllMsgs(updatedMsgs)
-
+    
     
   }
   useEffect(() => {
-
+    
     socket.current.on('recv-msg', (msg) => {
       setarrivalMessage({ fromSelf: false, content: msg })
     })
-
+    
   }, [allMsgs])
+  useEffect(() => {
+    arrivalMessage && setAllMsgs((prev) => [...prev, arrivalMessage]);
+  }, [arrivalMessage]);
   useEffect(() => {
     scroll.current?.scrollIntoView({ behaviour: 'smooth' })
   })
