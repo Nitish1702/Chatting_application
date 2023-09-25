@@ -18,7 +18,8 @@ mongoose.connect(process.env.DB, {
 }).then(() => {
     
 }).catch((err) => {
-    next(err)
+    console.log("first")
+
 })
 const port = process.env.PORT || 3001;
 const server=app.listen(port, ()=>{})

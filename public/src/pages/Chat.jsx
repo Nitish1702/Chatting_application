@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -12,17 +12,17 @@ import Logout from '../components/Logout'
 
 const Chat = () => {
   const navigate = useNavigate()
-  const socket=useRef()
+  const socket = useRef()
   const [contacts, setContacts] = useState([])
   const [currUser, setcurrUser] = useState(undefined)
   const [currChat, setCurrChat] = useState(undefined)
   useEffect(() => {
-
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
     if (currentUser && currentUser.isAwatarImageSet === false) {
       navigate('/setAvatar')
     }
-    else if (!(localStorage.getItem('currentUser'))) {
+    else if (!currentUser) {
 
       navigate('/login')
     } else {
@@ -33,9 +33,9 @@ const Chat = () => {
   useEffect(() => {
     if (currUser) {
       socket.current = io(host)
-      socket.current.emit('add-user',currUser._id)
+      socket.current.emit('add-user', currUser._id)
     }
-  },[currUser])
+  }, [currUser])
   useEffect(() => {
     if (currUser) {
       axios.get(`${allUsersRoute}/${currUser._id}`).then(
@@ -43,21 +43,21 @@ const Chat = () => {
 
           setContacts(users.data)
         }
-        )
-      }
-      
-    }, [currUser])
-    
-    
-    
-    return (
-      
-      <Container>
+      )
+    }
+
+  }, [currUser])
+
+  if (!localStorage.getItem("currentUser")) {
+    return navigate('/login');
+  }
+  return (
+    <Container>
       <Logout />
       <div className="container">
-        <Contacts contacts={contacts} currentUser={currUser} setCurrChat={setCurrChat}/>
+        <Contacts contacts={contacts} currentUser={currUser} setCurrChat={setCurrChat} />
         {currChat ?
-          <ChatContainer currChat={currChat} currUser={currUser} socket={ socket} />:
+          <ChatContainer currChat={currChat} currUser={currUser} socket={socket} /> :
           <Welcome />
         }
       </div>

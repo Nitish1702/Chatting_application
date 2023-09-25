@@ -20,7 +20,7 @@ module.exports.register = async (req, res, next) => {
     delete user.password;
     return res.json({ status: true, user });
   } catch (er) {
-    next(er);
+    console.log("first");
   }
 };
 module.exports.login = async (req, res, next) => {
@@ -37,13 +37,12 @@ module.exports.login = async (req, res, next) => {
         });
       } else {
         return res.json({ msg: "Wrong Credentials", status: false });
-    }
+      }
     else {
-        return res.json({ msg: "No users of that credential", status: false });
-        
+      return res.json({ msg: "No users of that credential", status: false });
     }
   } catch (er) {
-    next(er);
+    console.log("first");
   }
 };
 module.exports.setAvatar = async (req, res, next) => {
@@ -58,22 +57,20 @@ module.exports.setAvatar = async (req, res, next) => {
       isSet: userData.isAwatarImageSet,
       image: userData.avatarImage,
     });
-
-
   } catch (er) {
     next(er);
   }
 };
 module.exports.getAllUsers = async (req, res, next) => {
-    try {
-      const users = await User.find({ _id: { $ne: req.params.id } }).select([
-        "email",
-        "username",
-        "avatarImage",
-        "_id",
-      ]);
-      return res.json(users);
-    } catch (ex) {
-      next(ex);
-    }
-  };
+  try {
+    const users = await User.find({ _id: { $ne: req.params.id } }).select([
+      "email",
+      "username",
+      "avatarImage",
+      "_id",
+    ]);
+    return res.json(users);
+  } catch (ex) {
+    next(ex);
+  }
+};
