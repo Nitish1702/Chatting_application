@@ -4,7 +4,7 @@
   },
   
     "scripts": {
-        "server": "node index.js --prefix server",
+        "server": "node --prefix server",
         "client": "npm start --prefix public",
         "start": "concurrently \"npm run server\" \"npm run client\"",
         "server-build":"npm install --prefix server",
