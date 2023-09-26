@@ -32,7 +32,7 @@ const io = socket(server, {
   },
 });
 global.onlineUsers = new Map();
-io.on("connection", (socket) => {
+io.on("connection", async(socket) => {
   
   global.chatSocket = socket;
   socket.on("add-user", (userId) => {
@@ -44,4 +44,5 @@ io.on("connection", (socket) => {
       socket.to(sendUserSocket).emit("recv-msg", data.msg);
     }
   });
+  await longRunningOperation();
 });
