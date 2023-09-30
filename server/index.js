@@ -27,13 +27,12 @@ const server = app.listen(port, () => {});
 
 const io = socket(server, {
   cors: {
-    origin: "https://chattingapplication.onrender.com/",
+    origin: ["http://localhost:3001","https://chattingapplication.onrender.com"],
     Credential: true,
   },
 });
 global.onlineUsers = new Map();
-io.on("connection", async(socket) => {
-  
+io.on("connection", async (socket) => {
   global.chatSocket = socket;
   socket.on("add-user", (userId) => {
     onlineUsers.set(userId, socket.id);
@@ -44,5 +43,5 @@ io.on("connection", async(socket) => {
       socket.to(sendUserSocket).emit("recv-msg", data.msg);
     }
   });
-  await longRunningOperation();
+  // await longRunningOperation();
 });
